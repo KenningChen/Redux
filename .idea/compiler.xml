@@ -2,9 +2,9 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="1.8">
-      <module name="Redux.app" target="11" />
+      <module name="Redux.app" target="17" />
       <module name="Redux.library_redux" target="11" />
-      <module name="Redux.redux" target="11" />
+      <module name="Redux.redux" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>
