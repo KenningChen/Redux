@@ -14,6 +14,9 @@ class App : Application() {
             override val dialog: KClass<LoadingDialog> = LoadingDialog::class
 
             override val defaultContent: String = ""
+            override fun LoadingDialog.dismissDialog() {
+                dismissDialog()
+            }
 
 
             override fun LoadingDialog.setLoadingCancelable(boolean: Boolean) {
@@ -23,6 +26,7 @@ class App : Application() {
             override fun LoadingDialog.setLoadingContent(content: String) {
                 setContent(content)
             }
+
         })
     }
 }
