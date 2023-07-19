@@ -37,6 +37,10 @@ class LoadingDialog : DialogFragment() {
         this.cancelable = cancelable
     }
 
+    fun dismissDialog(){
+        dismiss()
+    }
+
     override fun show(manager: FragmentManager, tag: String?) {
         super.show(manager,tag)
         runPost {
