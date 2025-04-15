@@ -38,7 +38,7 @@ class LoadingDialog : DialogFragment() {
     }
 
     fun dismissDialog(){
-        dismiss()
+        dismissAllowingStateLoss()
     }
 
     override fun show(manager: FragmentManager, tag: String?) {

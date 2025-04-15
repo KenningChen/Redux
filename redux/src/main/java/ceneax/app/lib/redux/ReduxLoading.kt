@@ -41,7 +41,7 @@ class ReduxLoadingDialogContext(
         dialogInstance.setLoadingCancelable(cancel)
     }
 
-    fun dismissDialog() = dialogInstance.dismiss()
+    fun dismissDialog() = dialogInstance.dismissAllowingStateLoss()
 }
 
 suspend fun <T> EffectContext.loadingScope(
@@ -57,7 +57,7 @@ suspend fun <T> EffectContext.loadingScope(
     it.setLoadingContent(it.reduxLoadingDialog.defaultContent)
     val result = lifecycleOwner.lifecycleScope.block(it)
     if (autoDismiss) {
-        it.dialogInstance.dismiss()
+        it.dialogInstance.dismissAllowingStateLoss()
     }
     result
 }
@@ -75,7 +75,7 @@ suspend fun <T> RContext.loadingScope(
     it.setLoadingContent(it.reduxLoadingDialog.defaultContent)
     val result = coroutineScope.block(it)
     if (autoDismiss) {
-        it.dialogInstance.dismiss()
+        it.dialogInstance.dismissAllowingStateLoss()
     }
     result
 }

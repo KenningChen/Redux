@@ -50,7 +50,7 @@ open class ReduxDialog<VB : ViewBinding, P> : DialogFragment() {
 //    @OptIn(ReduxInternalApi::class)
     open fun dismiss(type: Result<P>) {
         mResult = type
-        dismiss()
+        dismissAllowingStateLoss()
     }
 
 //    @ReduxInternalApi
