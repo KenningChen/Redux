@@ -3,3 +3,6 @@
 # JitPack 默认 JDK 跑 Kotlin 1.9.20 的 KGP 有版本风险,显式锁定
 jdk:
   - openjdk17
+# 显式只发布库模块(settings.gradle 在 JITPACK 环境已摘除 demo app,此处兜底)
+install:
+  - ./gradlew :annotation:publishToMavenLocal :compiler:publishToMavenLocal :plugin:publishToMavenLocal :redux:publishToMavenLocal

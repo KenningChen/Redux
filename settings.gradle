@@ -23,8 +23,17 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "Redux"
-include ':app'
-include ':redux'
-include ':compiler'
-include ':annotation'
-include ':plugin'
+// JitPack 发布环境只配置库模块:demo app 依赖 KSP 等重型插件,JitPack 网络环境解析不到
+// 会拖垮整个发布构建(0.5.9 首发实证);发布路径只需 annotation/compiler/plugin/redux
+if (System.getenv('JITPACK') == 'true') {
+    include ':redux'
+    include ':compiler'
+    include ':annotation'
+    include ':plugin'
+} else {
+    include ':app'
+    include ':redux'
+    include ':compiler'
+    include ':annotation'
+    include ':plugin'
+}
