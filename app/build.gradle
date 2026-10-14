@@ -1,3 +1,17 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public/' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // KSP(demo app 专用 classpath,放模块局部:JitPack 发布环境 app 被 settings.gradle 摘除,
+        // 根 buildscript 不再解析 KSP——JitPack 网络环境曾解析不到 KSP 插件导致发布构建失败)
+        classpath "com.google.devtools.ksp:symbol-processing-gradle-plugin:1.9.20-1.0.14"
+    }
+}
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -5,7 +19,7 @@ plugins {
     // Redux 插件
     id 'ceneax.app.plugin.redux'
 }
-// KSP(Redux 路由注册表生成走 KSP 链路验证;classpath 见根 build.gradle,apply 方式对 JitPack 环境友好)
+// KSP(Redux 路由注册表生成走 KSP 链路验证;classpath 见本文件局部 buildscript)
 apply plugin: 'com.google.devtools.ksp'
 
 android {

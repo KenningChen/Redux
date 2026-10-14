@@ -7,8 +7,6 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        // KSP(demo app 用;classpath 本体方式,不依赖 gradlePluginPortal 的插件 marker——JitPack 环境曾因 marker 全仓未命中构建失败)
-        classpath "com.google.devtools.ksp:symbol-processing-gradle-plugin:1.9.20-1.0.14"
         // Redux 插件
         classpath 'com.github.ceneax.Redux:plugin:0.2.0'
     }
