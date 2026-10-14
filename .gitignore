@@ -16,3 +16,9 @@ local.properties
 
 # comet worktree 隔离目录
 .worktrees/
+
+# AI 工作配置(本地私有,不入公开库)
+.claude/
+.comet/
+.codegraph/
+CLAUDE.md
