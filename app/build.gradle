@@ -2,11 +2,11 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
-    // KSP（Redux 路由注册表生成走 KSP 链路验证）
-    id 'com.google.devtools.ksp' version '1.9.20-1.0.14'
     // Redux 插件
     id 'ceneax.app.plugin.redux'
 }
+// KSP(Redux 路由注册表生成走 KSP 链路验证;classpath 见根 build.gradle,apply 方式对 JitPack 环境友好)
+apply plugin: 'com.google.devtools.ksp'
 
 android {
     compileSdk 32
