@@ -5,8 +5,9 @@ plugins {
 }
 
 group = 'com.github.KenningChen.Redux'
-// compiler POM 的 annotation 依赖坐标取自 project version,发版需显式版本(随 tag 同步)
-version = '0.5.9'
+// compiler POM 的 annotation 依赖坐标取自 project version,发版需显式版本(随 tag 同步;
+// JitPack 发布时强制重写为 tag 版本,此值仅影响本地 publishToMavenLocal 形态)
+version = '0.5.10'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8

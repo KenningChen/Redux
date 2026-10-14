@@ -31,7 +31,8 @@ publishing {
             // 本地联调期可临时改 SNAPSHOT 后 publishToMavenLocal)
             groupId 'com.github.KenningChen.Redux'
             artifactId 'compiler'
-            version '0.5.9'
+            // JitPack 发布时强制重写为 tag 版本,此值仅影响本地 publishToMavenLocal 形态
+            version '0.5.10'
             from components.java
         }
     }
