@@ -5,10 +5,9 @@ import java.util.*
 
 const val DEFAULT_PACKAGE = "ceneax.app.lib.redux.default.module"
 
-internal fun getModuleName(generateDir: String): String {
+internal fun getModuleName(generateDir: String, anchor: String): String {
     return try {
-        val kaptGenDir = "${File.separatorChar}build${File.separatorChar}generated${File.separatorChar}source${File.separatorChar}kaptKotlin"
-        val pathIndex = generateDir.lastIndexOf(kaptGenDir)
+        val pathIndex = generateDir.lastIndexOf(anchor)
         val subStr = generateDir.substring(0, pathIndex)
         val lastIndex = subStr.lastIndexOf(File.separatorChar)
         val result = subStr.substring(lastIndex + 1)

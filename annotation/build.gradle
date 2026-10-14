@@ -4,7 +4,9 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'ceneax.app.lib'
+group = 'com.github.KenningChen.Redux'
+// compiler POM 的 annotation 依赖坐标取自 project version,发版需显式版本(随 tag 同步)
+version = '0.5.9'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -14,6 +16,9 @@ java {
 publishing {
     publications {
         maven(MavenPublication) {
+            groupId 'com.github.KenningChen.Redux'
+            artifactId 'annotation'
+            version '0.5.9'
             from components.java
         }
     }

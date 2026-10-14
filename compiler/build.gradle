@@ -17,6 +17,9 @@ dependencies {
 
     implementation "com.squareup:kotlinpoet:1.10.2"
 
+    // KSP 处理器 API(1.0.x 为 KSP1 API,版本前缀与消费方 Kotlin 版本对齐)
+    implementation "com.google.devtools.ksp:symbol-processing-api:1.9.20-1.0.14"
+
     implementation 'com.google.auto.service:auto-service:1.0'
     kapt "com.google.auto.service:auto-service:1.0"
 }
@@ -24,6 +27,11 @@ dependencies {
 publishing {
     publications {
         maven(MavenPublication) {
+            // JitPack 形态坐标(JitPack 发布时强制重写 groupId/version 为 tag,不影响发布;
+            // 本地联调期可临时改 SNAPSHOT 后 publishToMavenLocal)
+            groupId 'com.github.KenningChen.Redux'
+            artifactId 'compiler'
+            version '0.5.9'
             from components.java
         }
     }

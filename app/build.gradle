@@ -2,6 +2,8 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    // KSP（Redux 路由注册表生成走 KSP 链路验证）
+    id 'com.google.devtools.ksp' version '1.9.20-1.0.14'
     // Redux 插件
     id 'ceneax.app.plugin.redux'
 }
@@ -50,7 +52,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
     implementation project(':redux')
-    kapt project(':compiler')
+    ksp project(':compiler')
 
 //    implementation 'com.github.ceneax.Redux:redux:0.2.0'
 //    kapt 'com.github.ceneax.Redux:compiler:0.2.0'

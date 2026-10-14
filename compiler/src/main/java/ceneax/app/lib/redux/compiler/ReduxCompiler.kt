@@ -16,13 +16,19 @@ class ReduxCompiler : AbstractProcessor() {
     private var mPackageName = ""
     private var mClassName = ""
 
+    private companion object {
+        // kapt 生成目录锚点(路径形如 .../app/build/generated/source/kaptKotlin/<variant>)
+        val KAPT_GENERATED_DIR_ANCHOR =
+            "${File.separatorChar}build${File.separatorChar}generated${File.separatorChar}source${File.separatorChar}kaptKotlin"
+    }
+
     private val mPageRouteMap = mutableMapOf<String, String>()
 
     override fun init(processingEnv: ProcessingEnvironment) {
         super.init(processingEnv)
         processingEnv.options["kapt.kotlin.generated"]?.let { kaptKotlinGeneratedDir ->
             mPackageName = DEFAULT_PACKAGE
-            mClassName = getModuleName(kaptKotlinGeneratedDir)
+            mClassName = getModuleName(kaptKotlinGeneratedDir, KAPT_GENERATED_DIR_ANCHOR)
         }
     }
 

@@ -1,0 +1,5 @@
+# JitPack 构建配置
+# jdk 17: 与本地验证环境一致(JDK 17 + gradle 7.4.2 + AGP 7.2.1 + Kotlin 1.9.20 全链路已实证);
+# JitPack 默认 JDK 跑 Kotlin 1.9.20 的 KGP 有版本风险,显式锁定
+jdk:
+  - openjdk17

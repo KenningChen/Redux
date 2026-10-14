@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+
+# comet worktree 隔离目录
+.worktrees/
